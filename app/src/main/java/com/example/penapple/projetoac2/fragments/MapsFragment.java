@@ -98,8 +98,8 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Locati
         LocationManager lm = (LocationManager)getActivity().getSystemService(Context.LOCATION_SERVICE);
         assert lm != null;
         Location lastKnownLocation = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
-        lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
+        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 100, this);
+        lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 100, this);
 
 //        double longitude = lastKnownLocation.getLongitude();
 //        double latitude = lastKnownLocation.getLatitude();
