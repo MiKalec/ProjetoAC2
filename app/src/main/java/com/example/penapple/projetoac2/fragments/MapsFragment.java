@@ -1,6 +1,5 @@
 package com.example.penapple.projetoac2.fragments;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.location.Location;
 import android.location.LocationListener;
@@ -30,6 +29,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapsFragment extends Fragment implements OnMapReadyCallback, LocationListener  {
 
     SupportMapFragment mapFragment;
+
+    SendLocation SL;
 
 
     /*
@@ -72,8 +73,9 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Locati
                 //add a marker
                 LocationManager lm = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
                 Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-
-                fr.replace(R.id.fragment_container, new ProblemFragment());
+                ProblemFragment problemFragment = new ProblemFragment();
+                fr.replace(R.id.fragment_container, problemFragment);
+                SL.sendData(location, problemFragment);
                 fr.commit();
             }
         });
@@ -158,6 +160,29 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Locati
     @Override
     public void onProviderDisabled(String provider) {
 
+    }
+
+    public void receiveLocation(LatLng latLng) {
+        MarkerOptions markerOptions = new MarkerOptions();
+        markerOptions.position(latLng);
+        markerOptions.title("Localização atual");
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+        mGoogleMap.addMarker(markerOptions);
+    }
+
+    public interface SendLocation {
+        void sendData(Location location, ProblemFragment problemFragment);
+    }
+
+    @Override
+    public void onAttach(Context context){
+        super.onAttach(context);
+
+        try{
+            SL = (SendLocation) getActivity();
+        }catch (ClassCastException e){
+            throw new ClassCastException( "Error retrieving data");
+        }
     }
 }
 

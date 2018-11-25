@@ -1,6 +1,8 @@
 package com.example.penapple.projetoac2.activities;
 
-import android.support.v4.app.FragmentTransaction;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,9 +13,15 @@ import android.view.MenuItem;
 import com.example.penapple.projetoac2.R;
 import com.example.penapple.projetoac2.fragments.FeedFragment;
 import com.example.penapple.projetoac2.fragments.MapsFragment;
+import com.example.penapple.projetoac2.fragments.ProblemFragment;
 import com.example.penapple.projetoac2.fragments.ProfileFragment;
+import com.google.android.gms.maps.model.LatLng;
 
-public class MainActivity extends AppCompatActivity {
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+
+public class MainActivity extends AppCompatActivity implements MapsFragment.SendLocation, ProblemFragment.SendLocationToMark {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,4 +62,30 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
             };
+
+    @Override
+    public void sendData(Location location, ProblemFragment problemFragment) {
+
+        ProblemFragment pf = problemFragment;
+        pf.receiveLocation(getAddresses(location));
+    }
+
+    private List<Address> getAddresses(Location location) {
+        LatLng myCoordenates = new LatLng(location.getLatitude(), location.getLongitude());
+        Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+        List<Address> addresses = null;
+
+        try{
+            addresses = geocoder.getFromLocation(myCoordenates.latitude, myCoordenates.longitude, 1);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+        return addresses;
+    }
+
+    @Override
+    public void sendLoc(LatLng latLng, MapsFragment mapsFragment) {
+        mapsFragment.receiveLocation(latLng);
+    }
 }
