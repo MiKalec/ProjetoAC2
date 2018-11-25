@@ -9,6 +9,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.view.MenuItem;
+import android.widget.EditText;
 
 import com.example.penapple.projetoac2.R;
 import com.example.penapple.projetoac2.fragments.FeedFragment;
@@ -85,7 +86,9 @@ public class MainActivity extends AppCompatActivity implements MapsFragment.Send
     }
 
     @Override
-    public void sendLoc(LatLng latLng, MapsFragment mapsFragment) {
-        mapsFragment.receiveLocation(latLng);
+    public void sendLoc(LatLng latLng, EditText descricao, MapsFragment mapsFragment) {
+        MapsFragment map = mapsFragment;
+        String desc = descricao.getText().toString();
+        map.receiveLocation(latLng, desc);
     }
 }

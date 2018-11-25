@@ -59,7 +59,7 @@ public class ProblemFragment extends Fragment {
                 MapsFragment mapsFragment = new MapsFragment();
                 fr.replace(R.id.fragment_container, mapsFragment);
                 fr.commit();
-                SLM.sendLoc(latLng, mapsFragment);
+                SLM.sendLoc(latLng, descricao, mapsFragment);
             }
         });
     }
@@ -69,7 +69,7 @@ public class ProblemFragment extends Fragment {
     }
 
     public interface SendLocationToMark {
-        void sendLoc(LatLng latLng, MapsFragment mapsFragment);
+        void sendLoc(LatLng latLng, EditText descricao, MapsFragment mapsFragment);
     }
 
     @Override

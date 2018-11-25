@@ -26,6 +26,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MapsFragment extends Fragment implements OnMapReadyCallback, LocationListener  {
 
     SupportMapFragment mapFragment;
@@ -48,6 +51,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Locati
     private GoogleMap mGoogleMap;
 
     private Marker currentLocationMaker;
+    private static List<MarkerOptions> markers =  new ArrayList<>();
     private LatLng currentLocationLatLong;
 
     public MapsFragment(){
@@ -103,20 +107,13 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Locati
         lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 100, this);
         lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 100, this);
 
-//        double longitude = lastKnownLocation.getLongitude();
-//        double latitude = lastKnownLocation.getLatitude();
-
         mGoogleMap = googleMap;
 
+        for(MarkerOptions m : markers){
+            mGoogleMap.addMarker(m);
+        }
+
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-
-
-
-//        googleMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title("teste").snippet("cole rapaziada"));
-//
-//        CameraPosition teste = CameraPosition.builder().target(new LatLng(latitude, longitude)).zoom(16).bearing(0).tilt(0).build();
-//
-//        googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(teste));
 
     }
 
@@ -162,12 +159,12 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Locati
 
     }
 
-    public void receiveLocation(LatLng latLng) {
+    public void receiveLocation(LatLng latLng, String desc) {
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
-        markerOptions.title("Localização atual");
+        markerOptions.title(desc);
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
-        mGoogleMap.addMarker(markerOptions);
+        markers.add(markerOptions);
     }
 
     public interface SendLocation {
