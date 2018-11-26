@@ -58,6 +58,8 @@ public class ProblemFragment extends Fragment {
         numero.setText(address.getSubThoroughfare());
         rg = (RadioGroup)view.findViewById(R.id.radioGroup);
 
+        problema.setText(((RadioButton)rg.getChildAt(0)).getText());
+
         rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
             public void onCheckedChanged(RadioGroup group, int checkedId)
@@ -93,7 +95,7 @@ public class ProblemFragment extends Fragment {
                 MapsFragment mapsFragment = new MapsFragment();
                 fr.replace(R.id.fragment_container, mapsFragment);
                 fr.commit();
-                SLM.sendLoc(latLng, descricao, mapsFragment);
+                SLM.sendLoc(latLng, descricao, problema, mapsFragment);
             }
         });
     }
@@ -103,7 +105,7 @@ public class ProblemFragment extends Fragment {
     }
 
     public interface SendLocationToMark {
-        void sendLoc(LatLng latLng, EditText descricao, MapsFragment mapsFragment);
+        void sendLoc(LatLng latLng, EditText descricao, EditText problema, MapsFragment mapsFragment);
     }
 
     @Override

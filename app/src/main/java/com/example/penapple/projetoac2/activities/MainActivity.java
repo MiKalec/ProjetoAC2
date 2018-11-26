@@ -86,9 +86,17 @@ public class MainActivity extends AppCompatActivity implements MapsFragment.Send
     }
 
     @Override
-    public void sendLoc(LatLng latLng, EditText descricao, MapsFragment mapsFragment) {
+    public void sendLoc(LatLng latLng, EditText descricao, EditText problema , MapsFragment mapsFragment) {
         MapsFragment map = mapsFragment;
         String desc = descricao.getText().toString();
-        map.receiveLocation(latLng, desc);
+        if(desc == null){
+            desc = "";
+        }
+
+        String title = problema.getText().toString();
+        if(title == null){
+            title = "";
+        }
+        map.receiveLocation(latLng, desc, title);
     }
 }

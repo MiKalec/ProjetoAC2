@@ -132,6 +132,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Locati
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(currentLocationLatLong);
         markerOptions.title("Localização atual");
+        markerOptions.snippet("");
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
         currentLocationMaker = mGoogleMap.addMarker(markerOptions);
 
@@ -158,10 +159,10 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Locati
 
     }
 
-    public void receiveLocation(LatLng latLng, String desc) {
+    public void receiveLocation(LatLng latLng, String desc, String title) {
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
-        markerOptions.title("Problema");
+        markerOptions.title(title);
         markerOptions.snippet(desc);
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
         markers.add(markerOptions);
