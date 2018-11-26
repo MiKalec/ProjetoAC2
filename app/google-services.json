@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "905041306674",
+    "firebase_url": "https://projetoac-ffdc9.firebaseio.com",
+    "project_id": "projetoac-ffdc9",
+    "storage_bucket": "projetoac-ffdc9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:905041306674:android:8050bd8b9369bf8f",
+        "android_client_info": {
+          "package_name": "com.example.penapple.projetoac2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "905041306674-2hequth8tllh08ef1huomsa1lrmbp0ld.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.penapple.projetoac2",
+            "certificate_hash": "d1cdd89a36831a3c2e58def49c814a1d73c86084"
+          }
+        },
+        {
+          "client_id": "905041306674-e3khnod7obtb0hnmlhol0idbda242mpt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBR0itodYKYBPItubkEZYCRgHM6DfBECI8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "905041306674-e3khnod7obtb0hnmlhol0idbda242mpt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:905041306674:android:79035e42a5908d10",
+        "android_client_info": {
+          "package_name": "com.example.penapple.projetoac2.activities"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "905041306674-nhstqrh77ephcofoedqml896o7ao7tak.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.penapple.projetoac2.activities",
+            "certificate_hash": "d1cdd89a36831a3c2e58def49c814a1d73c86084"
+          }
+        },
+        {
+          "client_id": "905041306674-e3khnod7obtb0hnmlhol0idbda242mpt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBR0itodYKYBPItubkEZYCRgHM6DfBECI8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "905041306674-e3khnod7obtb0hnmlhol0idbda242mpt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

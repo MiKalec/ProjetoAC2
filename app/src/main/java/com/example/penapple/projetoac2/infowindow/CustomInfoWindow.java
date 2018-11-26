@@ -8,7 +8,6 @@ import android.widget.TextView;
 import com.example.penapple.projetoac2.R;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 public class CustomInfoWindow implements GoogleMap.InfoWindowAdapter{
 
