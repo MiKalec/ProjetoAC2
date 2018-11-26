@@ -15,6 +15,7 @@ import android.widget.Button;
 
 import com.example.penapple.projetoac2.LocationData;
 import com.example.penapple.projetoac2.R;
+import com.example.penapple.projetoac2.infowindow.CustomInfoWindow;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapsInitializer;
@@ -113,6 +114,8 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Locati
             mGoogleMap.addMarker(m);
         }
 
+        mGoogleMap.setInfoWindowAdapter(new CustomInfoWindow(getActivity()));
+
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
     }
@@ -137,10 +140,6 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Locati
         mGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 
         LocationData locationData = new LocationData(location.getLatitude(), location.getLongitude());
-        //mDatabase.child("location").child(String.valueOf(new Date().getTime())).setValue(locationData);
-
-        //Toast.makeText(this, "Localização atualizada", Toast.LENGTH_SHORT).show();
-        //getMarkers();
 
     }
 
@@ -162,7 +161,8 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Locati
     public void receiveLocation(LatLng latLng, String desc) {
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
-        markerOptions.title(desc);
+        markerOptions.title("Problema");
+        markerOptions.snippet(desc);
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
         markers.add(markerOptions);
     }
