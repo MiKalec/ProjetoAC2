@@ -8,14 +8,14 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="8dp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -69,13 +69,31 @@
             </LinearLayout>
         </ScrollView>
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Problema:"
+            android:paddingTop="15px"
+            android:paddingLeft="10px" />
+
         <EditText
             android:id="@+id/problema"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Problema" />
+            android:text="" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Endereço:"
+            android:paddingTop="15px"
+            android:paddingLeft="10px" />
 
         <EditText
             android:id="@+id/nomeRua"
@@ -83,15 +101,14 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Nome da Rua" />
+            android:text="" />
 
-        <EditText
-            android:id="@+id/nomeBairro"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Bairro" />
+            android:text="Número:"
+            android:paddingTop="1px"
+            android:paddingLeft="10px" />
 
         <EditText
             android:id="@+id/numero"
@@ -99,7 +116,29 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:text="Número" />
+            android:text="" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bairro:"
+            android:paddingTop="1px"
+            android:paddingLeft="10px" />
+
+        <EditText
+            android:id="@+id/nomeBairro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Descrição:"
+            android:paddingTop="1px"
+            android:paddingLeft="10px" />
 
         <EditText
             android:id="@+id/descricao"
@@ -107,11 +146,11 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Descrição (Opcional)" />
+            android:text="" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="26dp" />
+            android:layout_height="15dp" />
 
         <Button
             android:id="@+id/submit"

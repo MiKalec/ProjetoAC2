@@ -1,14 +1,219 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/holo_red_light">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:isScrollContainer="false">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Profile Fragment"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
+    <LinearLayout
+        android:id="@+id/form"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:weightSum="1">
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="15px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10px"
+                android:paddingTop="1px"
+                android:text="Nome" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.50"
+                android:paddingTop="1px" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="1px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:paddingTop="1px"
+                android:paddingLeft="10px" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.50"
+                android:paddingTop="1px" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="1px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CPF"
+                android:paddingTop="1px"
+                android:paddingLeft="10px" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.50"
+                android:paddingTop="1px"
+                android:inputType="number" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="1px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Estado/ Cidade"
+                android:paddingTop="1px"
+                android:paddingLeft="10px" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.50"
+                android:paddingTop="1px" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="1px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Telefone"
+                android:paddingTop="1px"
+                android:paddingLeft="10px" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textLongMessage"
+                android:layout_weight="0.50"
+                android:paddingTop="1px" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="1px">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gênero"
+                android:paddingTop="1px"
+                android:paddingLeft="10px" />
+
+            <RadioGroup
+                android:id="@+id/radioStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radioAccepted"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Masculino"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:id="@+id/radioWaiting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Feminino" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="1px">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pictures"
+                android:paddingTop="15px"
+                android:paddingLeft="10px" />
+
+
+            <Button
+                android:id="@+id/select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="1px"
+                android:text="Foto Perfil" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="1px">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView"
+                />
+
+        </LinearLayout>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="1px"
+            android:text="Salvar" />
+    </LinearLayout>
+
+</ScrollView>

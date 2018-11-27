@@ -105,8 +105,11 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Locati
         LocationManager lm = (LocationManager)getActivity().getSystemService(Context.LOCATION_SERVICE);
         assert lm != null;
         Location lastKnownLocation = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 100, this);
-        lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 100, this);
+        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2500, 0, this);
+        lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 2500, 0, this);
+
+        currentLocationLatLong = new LatLng(lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude());
+
 
         mGoogleMap = googleMap;
 
@@ -117,6 +120,15 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Locati
         mGoogleMap.setInfoWindowAdapter(new CustomInfoWindow(getActivity()));
 
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        CameraPosition cameraPosition = new CameraPosition.Builder().zoom(15).target(currentLocationLatLong).build();
+        mGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
+        MarkerOptions markerOptions = new MarkerOptions();
+        markerOptions.position(currentLocationLatLong);
+        markerOptions.title("Localização atual");
+        markerOptions.snippet("");
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        currentLocationMaker = mGoogleMap.addMarker(markerOptions);
 
     }
 
@@ -137,8 +149,8 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Locati
         currentLocationMaker = mGoogleMap.addMarker(markerOptions);
 
         //Move to new location
-        CameraPosition cameraPosition = new CameraPosition.Builder().zoom(15).target(currentLocationLatLong).build();
-        mGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+        //CameraPosition cameraPosition = new CameraPosition.Builder().zoom(15).target(currentLocationLatLong).build();
+        //mGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 
         LocationData locationData = new LocationData(location.getLatitude(), location.getLongitude());
 
