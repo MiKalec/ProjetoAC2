@@ -23,47 +23,11 @@
           }
         },
         {
-          "client_id": "905041306674-e3khnod7obtb0hnmlhol0idbda242mpt.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBR0itodYKYBPItubkEZYCRgHM6DfBECI8"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "905041306674-e3khnod7obtb0hnmlhol0idbda242mpt.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:905041306674:android:79035e42a5908d10",
-        "android_client_info": {
-          "package_name": "com.example.penapple.projetoac2.activities"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "905041306674-nhstqrh77ephcofoedqml896o7ao7tak.apps.googleusercontent.com",
+          "client_id": "905041306674-gn32vu4j1hemcd29j4qddncnfa5lovbc.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.penapple.projetoac2.activities",
-            "certificate_hash": "d1cdd89a36831a3c2e58def49c814a1d73c86084"
+            "package_name": "com.example.penapple.projetoac2",
+            "certificate_hash": "21d5a599b242675d1345c0989fcb91a8f31e1df1"
           }
         },
         {
