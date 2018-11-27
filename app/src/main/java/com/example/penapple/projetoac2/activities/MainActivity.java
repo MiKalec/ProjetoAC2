@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.widget.EditText;
 
 import com.example.penapple.projetoac2.R;
+import com.example.penapple.projetoac2.bean.Problem;
 import com.example.penapple.projetoac2.fragments.FeedFragment;
 import com.example.penapple.projetoac2.fragments.MapsFragment;
 import com.example.penapple.projetoac2.fragments.ProblemFragment;
@@ -22,7 +23,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity implements MapsFragment.SendLocation, ProblemFragment.SendLocationToMark {
+public class MainActivity extends AppCompatActivity implements MapsFragment.SendLocation, ProblemFragment.SendLocationToMark, ProblemFragment.SendProblemToFeed {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,5 +99,12 @@ public class MainActivity extends AppCompatActivity implements MapsFragment.Send
             title = "";
         }
         map.receiveLocation(latLng, desc, title);
+    }
+
+
+    @Override
+    public void sendProblem(Problem problem, FeedFragment feedFragment) {
+        FeedFragment feedFragment1 = feedFragment;
+        feedFragment1.receiveProblem(problem);
     }
 }
