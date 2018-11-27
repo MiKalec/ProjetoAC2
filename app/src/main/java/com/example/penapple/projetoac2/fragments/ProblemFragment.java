@@ -16,7 +16,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.example.penapple.projetoac2.R;
-import com.example.penapple.projetoac2.bean.Problem;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.List;
@@ -107,10 +106,6 @@ public class ProblemFragment extends Fragment {
 
     public interface SendLocationToMark {
         void sendLoc(LatLng latLng, EditText descricao, EditText problema, MapsFragment mapsFragment);
-    }
-
-    public interface SendProblemToFeed {
-        void sendProblem (Problem problem, FeedFragment feedFragment);
     }
 
     @Override
