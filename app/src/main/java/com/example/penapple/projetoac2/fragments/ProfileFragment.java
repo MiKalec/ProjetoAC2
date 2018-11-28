@@ -21,11 +21,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.provider.MediaStore.Images.Media;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
 import com.example.penapple.projetoac2.R;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 public class ProfileFragment extends Fragment {
 
@@ -33,15 +37,43 @@ public class ProfileFragment extends Fragment {
 
     private ScrollView mScrollView;
     private LinearLayout mFormView;
+    private Button save;
 
     private static int RESULT_LOAD_IMAGE = 1;
     Uri myPicture = null;
     Button buttonLoadImage;
 
+
     private static int sId = 0;
 
     private static int id() {
         return sId++;
+    }
+
+    private EditText nome;
+    private EditText email;
+    private EditText CPF;
+    private EditText cidade;
+    private EditText telefone;
+
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
+        nome = (EditText) view.findViewById(R.id.Nome);
+        email = (EditText) view.findViewById(R.id.Email);
+        CPF = (EditText) view.findViewById(R.id.CPF);
+        cidade = (EditText) view.findViewById(R.id.Cidade);
+        telefone = (EditText) view.findViewById(R.id.Telefone);
+        save = (Button) view.findViewById(R.id.save);
+
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction fr = getFragmentManager().beginTransaction();
+                ProfileFragment profileFragment = new ProfileFragment();
+                fr.replace(R.id.fragment_container, profileFragment);
+                fr.commit();
+                }
+        });
     }
 
     @Nullable
@@ -106,6 +138,7 @@ public class ProfileFragment extends Fragment {
     }
 
 
+
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -154,6 +187,24 @@ public class ProfileFragment extends Fragment {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate(): savedInstanceState = " + savedInstanceState);
         setRetainInstance(true);
+    }
+
+    public void receiveProfile(String nomeRecebido, String emailRecebido, String CPFRecebido,String cidadeRecebido, String telefoneRecebido, ProfileFragment profileFragment) {
+        ProfileFragment teste = new ProfileFragment();
+        teste = profileFragment;
+        teste = profileFragment;
+        teste.nome.setText(nomeRecebido);
+        teste.email.setText(emailRecebido);
+        teste.CPF.setText(CPFRecebido);
+        teste.cidade.setText(cidadeRecebido);
+        teste.telefone.setText(telefoneRecebido);
+        //FragmentTransaction fr = getFragmentManager().beginTransaction();
+        //fr.commit();
+
+    }
+
+    public interface profile {
+        void sendProfile(EditText nome, EditText email, EditText CPF,EditText cidade, EditText telefone, ProfileFragment profileFragment);
     }
 
 

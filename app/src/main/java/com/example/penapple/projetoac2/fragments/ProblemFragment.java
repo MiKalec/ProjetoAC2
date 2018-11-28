@@ -108,6 +108,7 @@ public class ProblemFragment extends Fragment {
         void sendLoc(LatLng latLng, EditText descricao, EditText problema, MapsFragment mapsFragment);
     }
 
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);

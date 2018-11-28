@@ -14,6 +14,56 @@
         android:orientation="vertical"
         android:weightSum="1">
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20px" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="250px"
+            android:gravity="center"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView"
+                android:adjustViewBounds="true"
+                android:maxWidth="480px"
+                android:maxHeight="270px"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="1px"
+            android:gravity="center">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Foto Perfil"
+                android:paddingTop="15px"
+                android:paddingLeft="0px" />
+
+
+            <Button
+                android:id="@+id/select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="1px"
+                android:text="Adicionar " />
+
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -31,7 +81,8 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.50"
-                android:paddingTop="1px" />
+                android:paddingTop="1px"
+                android:id="@+id/Nome"/>
 
 
         </LinearLayout>
@@ -53,7 +104,8 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.50"
-                android:paddingTop="1px" />
+                android:paddingTop="1px"
+                android:id="@+id/Email"/>
 
         </LinearLayout>
 
@@ -75,7 +127,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.50"
                 android:paddingTop="1px"
-                android:inputType="number" />
+                android:inputType="number"
+                android:id="@+id/CPF"/>
 
         </LinearLayout>
 
@@ -96,7 +149,8 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.50"
-                android:paddingTop="1px" />
+                android:paddingTop="1px"
+                android:id="@+id/Cidade"/>
 
         </LinearLayout>
 
@@ -119,7 +173,8 @@
                 android:layout_height="wrap_content"
                 android:inputType="textLongMessage"
                 android:layout_weight="0.50"
-                android:paddingTop="1px" />
+                android:paddingTop="1px"
+                android:id="@+id/Telefone"/>
 
         </LinearLayout>
 
@@ -162,50 +217,9 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingTop="1px">
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="8dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pictures"
-                android:paddingTop="15px"
-                android:paddingLeft="10px" />
-
-
-            <Button
-                android:id="@+id/select"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="1px"
-                android:text="Foto Perfil" />
-
-        </LinearLayout>
-
         <Space
             android:layout_width="match_parent"
-            android:layout_height="15dp" />
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingTop="1px">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView"
-                />
-
-        </LinearLayout>
+            android:layout_height="20dp" />
 
 
         <Button
@@ -213,7 +227,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:paddingTop="1px"
-            android:text="Salvar" />
+            android:text="Salvar"
+            android:id="@+id/save"/>
     </LinearLayout>
 
 </ScrollView>

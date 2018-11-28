@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity implements MapsFragment.SendLocation, ProblemFragment.SendLocationToMark {
+public class MainActivity extends AppCompatActivity implements MapsFragment.SendLocation, ProblemFragment.SendLocationToMark, ProfileFragment.profile{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,5 +98,35 @@ public class MainActivity extends AppCompatActivity implements MapsFragment.Send
             title = "";
         }
         map.receiveLocation(latLng, desc, title);
+    }
+
+    public void sendProfile(EditText nome, EditText email, EditText CPF,EditText cidade, EditText telefone, ProfileFragment profileFragment) {
+        ProfileFragment profileFragment1 = profileFragment;
+
+        String nomeString = nome.getText().toString();
+        if(nomeString == null){
+            nomeString = "";
+        }
+
+        String emailString = email.getText().toString();
+        if(emailString == null){
+            emailString = "";
+        }
+
+        String CPFString = CPF.getText().toString();
+        if(CPFString == null){
+            CPFString = "";
+        }
+
+        String cidadeString = cidade.getText().toString();
+        if(cidadeString == null){
+            cidadeString = "";
+        }
+
+        String telefoneString = telefone.getText().toString();
+        if(telefoneString == null){
+            telefoneString = "";
+        }
+        profileFragment1.receiveProfile(nomeString, emailString, CPFString, cidadeString, telefoneString, profileFragment1);
     }
 }
