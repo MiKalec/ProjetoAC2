@@ -12,12 +12,15 @@
         android:textSize="30sp"
         android:layout_centerInParent="true"/>
 
+
     <ImageView
-        android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/image" />
+        app:srcCompat="@drawable/image"
+        android:maxWidth="480px"
+        android:maxHeight="270px"
+        android:paddingTop="350px"/>
 
 
 
